@@ -6,8 +6,9 @@ resources:
   # Define a resource reference to the repository containing the templates
   repositories:
     - repository: 1ESPipelineTemplates  # This is the name you will use to reference it later
-      type: git                        # Type of the repository (Azure Repos Git)
-      name: poc/1ESPipelineTemplatesRepoName # Format: ProjectName/RepoName
+      type: github                      # Type of the repository (Azure Repos Git)
+      endpoint: luchua-bc (1)
+      name: luchua-bc/azure-sdk-tools # Format: ProjectName/RepoName
       ref: main                        # The branch containing the template files
 
 trigger:
