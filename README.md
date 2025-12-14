@@ -1,4 +1,4 @@
-# Azure SDK Tools (POC)
+# Azure SDK Tools (POC2)
 
 This repository contains useful tools that the Azure SDK team utilizes across their infrastructure.
 
