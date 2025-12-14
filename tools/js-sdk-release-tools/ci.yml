@@ -2,6 +2,13 @@
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+resources:
+  # Define a resource reference to the repository containing the templates
+  repositories:
+    - repository: 1ESPipelineTemplates  # This is the name you will use to reference it later
+      type: git                        # Type of the repository (Azure Repos Git)
+      name: poc/1ESPipelineTemplatesRepoName # Format: ProjectName/RepoName
+      ref: main                        # The branch containing the template files
 
 trigger:
   branches:
@@ -26,7 +33,7 @@ pr:
       - tools/js-sdk-release-tools
 
 extends:
-  template: /eng/pipelines/templates/stages/archetype-sdk-publish-js.yml
+  template: /eng/pipelines/templates/stages/archetype-sdk-publish-js.yml@1ESPipelineTemplates
   parameters:
     BuildStageName: InstallAndBuild
     ArtifactName: drop
