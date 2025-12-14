@@ -5,7 +5,7 @@
 resources:
   # Define a resource reference to the repository containing the templates
   repositories:
-    - repository: 1ESPipelineTemplates  # This is the name you will use to reference it later
+    - repository: ESPipelineTemplates  # This is the name you will use to reference it later
       type: github                      # Type of the repository (Azure Repos Git)
       endpoint: luchua-bc (1)
       name: luchua-bc/azure-sdk-tools # Format: ProjectName/RepoName
@@ -34,7 +34,7 @@ pr:
       - tools/js-sdk-release-tools
 
 extends:
-  template: /eng/pipelines/templates/stages/archetype-sdk-publish-js.yml@1ESPipelineTemplates
+  template: /eng/pipelines/templates/stages/archetype-sdk-publish-js.yml@ESPipelineTemplates
   parameters:
     BuildStageName: InstallAndBuild
     ArtifactName: drop
